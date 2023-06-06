@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Honey Pollen Detection</title>
+    <style>
+
+        h1 {
+            margin-top: 150px;
+            text-align: center;
+            color: #FFE373;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            color:#FFE373;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            width: 35%;
+            height: 3rem;
+            border: none;
+            outline: none;
+            color: black;
+            font-size: 1.4rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 2rem;
+            background: #FFE373;
+            transition: all 0.3s ease;
+            
+            margin: 20px auto;
+            padding: 10px 0;
+        }
+
+        input[type="submit"]:hover {  
+            width: 35%;
+            letter-spacing: 2px;
+            background: transparent;
+            border: 2px solid #FFE373;
+            color: #FFE373;
+        }
+
+        .nav{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.nav .logo{
+    width: 90px;   
+    height: 90px;
+    cursor: pointer;
+}
+
+.nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: #FFE373;
+    text-transform: uppercase ;
+}
+.nav ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #FFE373;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.nav ul li:hover::after{
+    width: 100%;
+}
+
+button {
+
+width: 5%;
+height: 3rem;
+border: none;
+outline: none;
+color: black;
+font-size: 1.4rem;
+cursor: pointer;
+border: 2px solid transparent;
+border-radius: 2rem;
+background: #FFE373;
+transition: all 0.3s ease;
+
+margin: 20px auto;
+padding: 10px 0;
+       
+}
+
+button:hover {
+width: 5%;
+letter-spacing: 2px;
+background: transparent;
+border: 2px solid #FFE373;
+color: #FFE373;
+}
+
+    </style>
+</head>
+
+<body style="background-image: url(static/b2.jpg);  width: 98%; 
+height: 90vh;background-size: cover; background-position: center;">
+<div class="nav">
+    <img src="static\logo321.png" class="logo">
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</div>
+    <h1>Honey Pollen Detection</h1>
+    <form action="/detect" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <br>
+        <input type="submit" value="Detect">
+    </form>
+    <a href="/home">
+        <button style="margin-left: 500px; margin-bottom: 10px;" type="button">Back</button>
+    </a>
+</body>
+
+</html>
+
+

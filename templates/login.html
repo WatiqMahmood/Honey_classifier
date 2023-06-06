@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="static\style4.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        function displayErrorMessage(message) {
+            var errorContainer = document.getElementById('error-container');
+            var errorMessage = document.getElementById('error-message');
+            errorMessage.innerText = message;
+            errorContainer.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        <h1>Login</h1>
+    </div>
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <label for="Username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="Username" name="username" placeholder="Username" required>
+        </div>
+        <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="Password" placeholder="Password" name="password" required>
+        </div>
+        <div id="error-container" style="display: none;">
+            <p id="error-message" class="error-message"></p>
+        </div>
+        <div class="button-area">
+            <button type="submit" class="btn btn-primary" onclick="displayErrorMessage('Invalid username or password.');">Login</button>
+        </div>
+    </form>
+    <div class="register-now">
+        Don't have an account? <a href="/register" class="btn btn-primary btn-sm">Register Now</a>
+    </div>
+</div>
+
+</body>
+</html>

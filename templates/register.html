@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register page</title>
+    <link rel="stylesheet" href="static\style4.css">
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        <h1>Register</h1>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="flash-message" style="color: aliceblue;">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %} 
+  <form action="/register" method="post">
+    <div class="mb-3">
+      <label for="Username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="Username" name="username" placeholder="Username" required>
+    </div>
+    <div class="mb-3">
+      <label for="Password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="Password" placeholder="Password" name="password" required>
+    </div>
+    <div class="button-area">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </form>
+  <div class="register-now">
+    I have already account. <a href="/login" class="btn btn-primary btn-sm">Sign In</a>
+  </div>
+</div>
+
+</body>
+</html>
